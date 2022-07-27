@@ -15,7 +15,7 @@ int main()
 
 	char ch;
 
-	for (int d = 1; d < 4; ++d) // game loop 4 times
+	for (int game = 4; game >= 0; game -= 1) // game loop 4 times
 	{
 		printf("Enter letter to search: ");
 		scanf("%c", &ch);
@@ -35,8 +35,9 @@ int main()
 				break;
 			}
 			printf("\n");
-		}
-		++d;
+		} 
+
+		printf("\n");
 	}
 	return 0;
 }
