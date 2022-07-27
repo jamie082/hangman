@@ -17,7 +17,7 @@ int main()
 
 	char ch;
 
-	do
+	for (int d = 0; d = 4; d++)
 	{
 		printf("\n");
 		printf("Enter letter to search: ");
@@ -39,8 +39,6 @@ int main()
 			}	
 			printf("\n");
 		}
-		a = a + 1;
-	} while (a <= GUESS_COUNT);
-
+	}
 	return 0;
 }
