@@ -8,17 +8,17 @@
 
 int main()
 {
-	char word[100] = "apple";  // word stored in database
+	char word[] = "apple";  // word stored in database
 	int penalty = 0;
 
 	printf("[%s]\nLength of string: %ld\n", word, sizeof(word));
 
 	char ch;
 
-	for (int d = 1; d < 4; ++d) // game loop 4 times
+	for (int d = 0; d < 4; d++) // game loop 4 times
 	{
 		printf("Enter letter to search: ");
-		scanf("%c", &ch);
+		scanf(" %c", &ch);
 
 		for (int i = 0; i < 26; i++) // Guess count, 4 times
 		{
@@ -33,10 +33,10 @@ int main()
 				printf("\nValue Not found: %c = %d\n", i, ch);
 				++penalty; // Letter not found, penalty is added
 				break;
-			}
+			}	
 			printf("\n");
 		}
-		++d;
+		d++;
 	}
 	return 0;
 }
