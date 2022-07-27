@@ -12,7 +12,6 @@ int main()
 	//char word[13] = {'h', 'i', 'd', 'd', 'e', 'n', 's', 't', 'r', 'i', 'n', 'g', '\0'};
 	//const char *word = "hiddenstring";
 	char word[] = "apple";
-	char new_str[13];
 	int penalty = 0, length= 0;
 	int i = 65;
 	/* Game is started with a word */
@@ -34,11 +33,11 @@ int main()
 		printf("Enter letter to search: ");
 		scanf(" %c", &scan_string);
 
-		for (i = 0; i < 26; i++) // If letter is in word, all instances revealed
+		for (i = 0; i < strlen(word); i++) // If letter is in word, all instances revealed
 		{
-			if (scan_string == new_str[i]) // Was found in Search
+			if (word[i] == scan_string) // Was found in Search
 			{
-				printf("Found value: %c = %d", scan_string, ascii);
+				printf("Found value: %c = %d", i, ascii);
 				break;
 			}
 
