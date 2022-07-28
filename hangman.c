@@ -35,18 +35,18 @@ int main()
 				break;
 				++penalty;
 			}
-		} 
-
-		if (penalty >= GAME_ERROR_NUM)
-		{
-			printf("You won the game\n");
+			break;
 		}
-
-		else
-		{
-			printf("The game is still running\n");
-		}
-
-		return 0;
 	}
+
+	if (penalty >= GAME_ERROR_NUM)
+	{
+		printf("You won the game with \n");
+	}
+
+	else
+	{
+		printf("The game is still running\n");
+	}
+
 }
