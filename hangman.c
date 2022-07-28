@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #define GUESS_COUNT 3
+#define GAME_ERROR 3
 
 /* http://hangmanwords.com/play */
 
@@ -15,7 +16,7 @@ int main()
 
 	char ch;
 
-	for (int game = 4; game >= 0; game -= 1) // game loop 4 times
+	for (int game = 4; game >= 0;game -=1) // game loop 4 times
 	{
 		printf("Enter letter to search: ");
 		scanf("%c", &ch);
@@ -31,13 +32,21 @@ int main()
 			else
 			{
 				printf("\nValue Not found: %c = %d\n", i, ch);
-				++penalty; // Letter not found, penalty is added
 				break;
+				++penalty;
 			}
-			printf("\n");
 		} 
-
-		printf("\n");
 	}
+
+	if (penalty >= GAME_ERROR)
+	{
+		print("You won the game");
+	}
+
+	else
+	{
+		print("The game is still running");
+	}
+
 	return 0;
 }
