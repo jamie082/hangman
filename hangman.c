@@ -4,44 +4,43 @@
 
 #define GUESS_COUNT 3
 #define GAME_ERROR_NUM 3
+#define FUNC 8
+char b[FUNC];
+int penalty;
+char ch;
+char str[100];
 
 /* http://hangmanwords.com/play */
 
 int main()
 {
-	char word[100] = "apple";  // word stored in database
+	char word[] = "apple";
 	int penalty = 0;
 
 	printf("[%s]\nLength of string: %ld\n", word, sizeof(word));
 
-	char ch;
-
 	for (int game = 4; game >= 0; game -=1) // game loop 4 times
 	{
-		printf("Enter letter to search: ");
+		printf("Enter letter to search for: ");
 		scanf("%c", &ch);
 
-		for (int i = 0; i < 26; i++) // Guess count, 4 times
+		for (int i = 0; i <= strlen(word); i++) // Guess count, 4 times
 		{
 			if (word[i] == ch) // Was found in Search
 			{
-				printf("Found value: %c = %d", i, ch);
-				break;
+				printf("Found value: %c = %d\n", ch, i + 1);
 			}
 
 			else
 			{
-				printf("\nValue Not found: %c = %d\n", i, ch);
-				break;
-				++penalty;
+				penalty++;
 			}
-			break;
 		}
 	}
 
-	if (penalty >= GAME_ERROR_NUM)
+	if (penalty >= GAME_ERROR_NUM) /* if error num is greater than or equal to 3 */
 	{
-		printf("You won the game with \n");
+		printf("You won the game with, three total errors (3)");
 	}
 
 	else
